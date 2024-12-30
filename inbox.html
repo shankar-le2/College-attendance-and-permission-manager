@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; 
+            position: sticky;
+            top: 0;
+            }
+
+            li {
+            float: left;
+            }
+
+            li .nb {
+            border: none;
+            background: none;
+            text-decoration: none;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            }
+
+            li .nb:hover {
+            background-color: #111;
+            }
+
+            #active {
+            background-color: #4CAF50;
+            }
+            .lab{
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 80px;
+                padding: 10px;
+            }
+            form{
+                font-size: 0.5cm;
+            }
+            table{
+                background-color: #333;
+                padding: 0.7cm;
+                border-spacing: 0.25cm;
+                border-radius: 0.5cm;
+            }
+            select {
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+              }
+              
+              select option {
+                padding: 5px;
+                font-size: 14px;
+                background-color: #fff;
+                color: #333;
+                text-align: center;
+              }
+              
+              select option:hover {
+                background-color: #f0f0f0;
+              }
+              
+              input{
+                width: 130px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }  
+
+            #sb{
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+            #sb:hover{
+                background-color: #4CAF50;
+                color: white;
+                border-color: white;
+            }
+            #hide{
+                display: none;
+            }
+            #logout{
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <form action="/HOD_class_info" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Home</button>
+                </form>    
+            </li>
+            <li>
+                <form action="/permission_manager" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Permission Manager</button>
+                </form>    
+            </li>
+            <li>
+                <form action="/inbox" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button id="active" type="submit" class="nb">Inbox</button>
+                </form>    
+            </li>
+            <li id="logout">
+                <form action="/logout" method="get">
+                    <button type="submit" class="nb">Log out</button>
+                </form>    
+            </li>
+        </ul>
+        <br>
+        <div>
+            <center>
+                <form action="/verified_message" method="get">
+                    <div>
+                        <input id="hide" type="text" name="inuser" value="'+ req.query.inuser +'">
+                    </div>
+                    <table>
+                        <tr>
+                            <td class="lab"><label>Register No:</label></td>
+                            <td><input type="text" value="'+ doc.data().regno +'" name="regno"></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Year:</label></td>
+                            <td><input type="text" value="'+ doc.data().year +'" name="year"></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Branch:</label></td>
+                            <td><input type="text" value="'+ doc.data().branch +'" name="branch"></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Date From:</label></td>
+                            <td><input type="text" name="from" value="'+ doc.data().from +'"></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Date To:</label></td>
+                            <td><input type="text" name="to" value="'+ doc.data().to +'"></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Message:</label></td>
+                            <td>
+                                <textarea name="message" rows="15" cols="100">'+ doc.data().message +'</textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Grant Attendance:</label></td>
+                            <td>
+                                <select name="AG">
+                                    <option value="2">select</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Grant Outing:</label></td>
+                            <td>
+                                <select name="OG">
+                                    <option value="2">select</option>
+                                    <option value="1">Yes</option>
+                                    <option value="2">No</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <button id="sb" type="submit" >Grant</button>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </body>
+</html>
+
+

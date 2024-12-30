@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; 
+            position: sticky;
+            top: 0;
+            }
+
+            li {
+            float: left;
+            }
+
+            li .nb {
+                border: none;
+                background: none;
+                text-decoration: none;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                }
+    
+                li .nb:hover {
+                background-color: #111;
+                }
+
+            #active {
+            background-color: #4CAF50;
+            }
+            .block
+            {
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 220px;
+                padding: 10px;
+            }
+            .lab{
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 80px;
+                padding: 10px;
+            }
+            form{
+                font-size: 0.5cm;
+            }
+            table{
+                background-color: #333;
+                padding: 0.7cm;
+                border-spacing: 0.25cm;
+                border-radius: 0.5cm;
+            }
+            select {
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+              }
+            input{
+                width: 130px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+              
+              select option {
+                padding: 5px;
+                font-size: 14px;
+                background-color: #fff;
+                color: #333;
+                text-align: center;
+              }
+              
+              select option:hover {
+                background-color: #f0f0f0;
+              }
+              
+              #sb{
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+            #sb:hover{
+                background-color: #4CAF50;
+                color: white;
+                border-color: white;
+            }
+            #hide{
+                display: none;
+            }
+            #logout{
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <form action="/student_class_info" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Home</button>
+                </form>    
+            </li>
+            <li>
+                <form action="/message" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button id="active" type="submit" class="nb">Message</button>
+                </form>    
+            </li>
+            <li>
+                <form action="/approvals" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Approvals</button>
+                </form>    
+            </li>
+            <li id="logout">
+                <form action="/logout" method="get">
+                    <button type="submit" class="nb">Log out</button>
+                </form>    
+            </li>
+        </ul>
+        <br>
+        <div>
+            <center>
+                <form action="/send_message" method="get">
+                    <div>
+                        <input id="hide" type="text" name="inuser" value="'+ req.query.inuser +'">
+                    </div>
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <p class="block">Message sent successfully</p>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>To:</label></td>
+                            <td>
+                                <select name="touser" required>
+                                    <option>select</option>
+                                    <option value="HOD-AIML">HOD-AIML</option>
+                                    <option value="HOD-AIDS">HOD-AIDS</option>
+                                    <option value="HOD-CSE">HOD-CSE</option>
+                                    <option value="HOD-IT">HOD-IT</option>
+                                    <option value="HOD-CSBS">HOD-CSBS</option>
+                                    <option value="HOD-ECE">HOD-ECE</option>
+                                    <option value="HOD-CE">HOD-CE</option>
+                                    <option value="HOD-ME">HOD-ME</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Year:</label></td>
+                            <td>
+                                <select name="year" required>
+                                    <option>select</option>
+                                    <option value="1">1-year</option>
+                                    <option value="2">2-year</option>
+                                    <option value="3">3-year</option>
+                                    <option value="4">4-year</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Branch:</label></td>
+                            <td>
+                                <select name="branch" required>
+                                    <option>select</option>
+                                    <option value="AIML">AIML</option>
+                                    <option value="AIDS">AIDS</option>
+                                    <option value="CSE">CSE</option>
+                                    <option value="IT">IT</option>
+                                    <option value="CSBS">CSBS</option>
+                                    <option value="ECE">ECE</option>
+                                    <option value="CE">CE</option>
+                                    <option value="ME">ME</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Date From:</label></td>
+                            <td><input type="date" name="from" required></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Date To:</label></td>
+                            <td><input type="date" name="to" required></td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Message:</label></td>
+                            <td>
+                                <textarea name="message" rows="15" cols="100" required></textarea>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <button id="sb" type="submit" >Send Message</button>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+    </body>
+</html>
+
+

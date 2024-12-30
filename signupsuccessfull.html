@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .lab{
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 80px;
+                padding: 10px;
+            }
+            input{
+                width: 130px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+            form{
+                font-size: 0.5cm;
+            }
+            table{
+                background-color: #333;
+                padding: 0.7cm;
+                border-spacing: 0.25cm;
+                border-radius: 0.5cm;
+            }
+            
+            #sb{
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+            #sb:hover{
+                background-color: #4CAF50;
+                color: white;
+                border-color: white;
+            }
+            .H{
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 180px;
+                padding: 10px;
+            }
+            .left{
+                float: left;
+            }
+            .right{
+                float: right;
+            }
+            .main{
+                width: 700px;
+            }
+        </style>
+    </head>
+    <body>
+        <br>
+        <center>
+        <div class="main">
+        <div class="left">
+            <center>
+                <form action="/hodloginsubmit" method="post">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <center><p class="H">HOD LOGIN</p></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Username:</label></td>
+                            <td>
+                                <input type="text" name="inuser" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Password:</label></td>
+                            <td>
+                                <input type="password" name="inpass" required>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <button id="sb" type="submit" >Login</button>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+        <div class="right">
+            <center>
+                <form action="/studentloginsubmit" method="post">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <center><p class="H">STUDENT LOGIN</p></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Username:</label></td>
+                            <td>
+                                <input type="text" name="inuser" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Password:</label></td>
+                            <td>
+                                <input type="password" name="inpass" required>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <button id="sb" type="submit" >Login</button>
+                                </center>
+                            </td>
+                        </tr>
+                </form>
+                <form action="/studentsignup">
+                    <tr>
+                        <td colspan="2">
+                            <center>
+                                <button id="sb" type="submit" >Signup</button>
+                            </center>
+                        </td>
+                    </tr>
+                </form>
+                </table>
+            </center>
+        </div>
+    </div>
+    </center>
+    <script>
+        window.alert("Sign up successfull")
+    </script>
+    </body>
+</html>

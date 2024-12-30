@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .lab{
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 80px;
+                padding: 10px;
+            }
+            input{
+                width: 130px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+            form{
+                font-size: 0.5cm;
+            }
+            table{
+                background-color: #333;
+                padding: 0.7cm;
+                border-spacing: 0.25cm;
+                border-radius: 0.5cm;
+            }
+            
+            #sb{
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+            }
+            #sb:hover{
+                background-color: #4CAF50;
+                color: white;
+                border-color: white;
+            }
+            .H{
+                background-color: #4CAF50;
+                color: white;
+                border-radius: 4px;
+                width: 180px;
+                padding: 10px;
+            }
+            select {
+                width: 150px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                color: #333;
+                appearance: none;
+                outline: none;
+                cursor: pointer;
+              }
+              
+              select option {
+                padding: 5px;
+                font-size: 14px;
+                background-color: #fff;
+                color: #333;
+                text-align: center;
+              }
+              
+              select option:hover {
+                background-color: #f0f0f0;
+              }
+        </style>
+    </head>
+    <body>
+        <br>
+        <div>
+            <center>
+                <form action="/studentsignupsubmit" method="post">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <center><p class="H">STUDENT SIGNUP</p></center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Username:</label></td>
+                            <td>
+                                <input type="text" name="upuser" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Password:</label></td>
+                            <td>
+                                <input type="password" name="uppass" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Year:</label></td>
+                            <td>
+                                <select name="year" required>
+                                    <option>select</option>
+                                    <option value="1">1-year</option>
+                                    <option value="2">2-year</option>
+                                    <option value="3">3-year</option>
+                                    <option value="4">4-year</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="lab"><label>Branch:</label></td>
+                            <td>
+                                <select name="branch" required>
+                                    <option>select</option>
+                                    <option value="AIML">AIML</option>
+                                    <option value="AIDS">AIDS</option>
+                                    <option value="CSE">CSE</option>
+                                    <option value="IT">IT</option>
+                                    <option value="CSBS">CSBS</option>
+                                    <option value="ECE">ECE</option>
+                                    <option value="CE">CE</option>
+                                    <option value="ME">ME</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <td colspan="2">
+                                <center>
+                                    <button id="sb" type="submit" >Sign up</button>
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </center>
+        </div>
+        <script>
+            window.alert("Username already exists")
+        </script>
+    </body>
+</html>
+
+

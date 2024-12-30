@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; 
+            position: sticky;
+            top: 0;
+            }
+
+            li {
+            float: left;
+            }
+
+            li .nb {
+                border: none;
+                background: none;
+                text-decoration: none;
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                }
+    
+                li .nb:hover {
+                background-color: #111;
+                }
+
+            #active {
+            background-color: #4CAF50;
+            }
+            #tab{
+                background-color: #333;
+                padding: 0.7cm;
+                border-spacing: 0.25cm;
+                border-radius: 0.5cm;
+                font-size: 0.7cm;
+            }
+            td{
+                background-color: white;
+                color: #333;
+                border-radius: 4px;
+                width: 80px;
+                padding: 10px;
+            }
+            th{
+                background-color: #4CAF50;
+                padding: 0.7cm;
+                border-spacing: 0.25cm;
+                border-radius: 0.5cm;
+                font-size: 0.7cm;
+                color: white;
+            }
+            #PG{
+                width: 1cm;
+                height: 1cm;
+                background-color: #4CAF50;
+                float: left;
+            }
+            #signal{
+                float: right;
+            }
+            #GS{
+                width: 1cm;
+                height: 1cm;
+                background-color: #4CAF50;
+            }
+            #YS{
+                width: 1cm;
+                height: 1cm;
+                background-color: yellow;
+            }
+            #BS{
+                width: 1cm;
+                height: 1cm;
+                background-color: blue;
+            }
+            .G{
+                background-color: #4CAF50;
+            }
+            .B{
+                background-color: blue;
+            }
+            .Y{
+                background-color: yellow;
+            }
+            #hide{
+                display: none;
+            }
+            #logout{
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>
+                <form action="/student_class_info" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Home</button>
+                </form>    
+            </li>
+            <li>
+                <form action="/message" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Message</button>
+                </form>    
+            </li>
+            <li>
+                <form action="/approvals" method="get">
+                    <div id="hide">
+                        <input type="text" name="inuser" value="'+req.query.inuser+'">
+                    </div>
+                    <button type="submit" class="nb">Approvals</button>
+                </form>    
+            </li>
+            <li id="logout">
+                <form action="/logout" method="get">
+                    <button type="submit" class="nb">Log out</button>
+                </form>    
+            </li>
+        </ul>
+        <div>
+            <center>
+                <table>
+                    <tr>
+                        <th>'+req.query.year+'-year/'+req.query.branch+'</td>
+                    </tr>
+                </table>
+            </center>
+            <div id="signal">
+                <table>
+                    <tr>
+                        <td>
+                            <div id="GS"></div>
+                        </td>
+                        <td>
+                            Attendance Granted
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="BS"></div>
+                        </td>
+                        <td>
+                            Outing Granted
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="YS"></div>
+                        </td>
+                        <td>
+                            Attendance & Outing Granted
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <center>
+                <table id="tab">
+                    <tr>
+                        '+temp+'
+                    </tr>
+                </table>
+            </center>
+        </div>
+    </body>
+</html>
+
+
